@@ -1,7 +1,7 @@
 # Bank Saving System
 
 **Deskripsi Singkat:**  
-Sistem manajemen tabungan bank yang memungkinkan pengguna untuk membuat akun, melakukan deposit, withdraw, dan melihat histori transaksi secara real-time.
+Sistem Bank Saving ini adalah aplikasi sederhana untuk mengelola customer, akun tabungan, dan transaksi deposit/withdraw.
 
 ---
 - **Frontend** → React (Vite + TypeScript)
@@ -27,6 +27,7 @@ Database menggunakan PostgreSQL. Struktur tabel utama:
 | customer_id| INTEGER       | Foreign Key ke Customer      |
 | packet     | VARCHAR       | Jenis paket tabungan         |
 | balance    | NUMERIC(10,2) | Saldo tabungan              |
+| deposito_type_id    | INTEGER | Foreign Key ke Deposito_Type            |
 
 **Transaction**  
 
@@ -37,6 +38,14 @@ Database menggunakan PostgreSQL. Struktur tabel utama:
 | type        | VARCHAR       | Deposit / Withdraw          |
 | amount      | NUMERIC(10,2) | Nominal transaksi           |
 | created_at  | TIMESTAMP     | Waktu transaksi             |
+
+**Deposito_Types**
+
+| Column        | Type         | Description                     |
+| ------------- | ------------ | ------------------------------- |
+| id            | SERIAL       | Primary Key                     |
+| name          | VARCHAR      | Nama jenis deposit              |
+| yearly_return | NUMERIC(5,2) | Persentase return per tahun (%) |
 
 ---
 
